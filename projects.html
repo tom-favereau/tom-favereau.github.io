@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Favereau - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">Tom Favereau</div>
+    <div class="nav-links">
+        <a href="index.html">About</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html" class="active">Projects</a>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<main>
+    <section class="page-header">
+        <h1>Projects</h1>
+    </section>
+
+
+
+
+    <section class="projects-list">
+        <!-- AOC -->
+        <div class="project-card">
+            <div class="project-content">
+                <h3>Advent of code</h3>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Golang</span>
+                    <span class="tag">Ocaml</span>
+                </div>
+                <p class="project-description">
+                    Advent of Code is a series of daily programming challenges released during
+                    December. I participate each year since 2023, solving problems in real-time
+                    using Python or Go. All my solutions are available on my GitHub repository,
+                    documenting my progress through these calendar.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/tom-favereau/advent_of_code" class="btn btn-primary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FAT32 -->
+        <div class="project-card">
+            <!--
+            <div class="project-image">
+                <div class="project-placeholder"></div>
+            </div>
+            -->
+            <div class="project-content">
+                <h3>FAT32</h3>
+                <div class="project-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaFX</span>
+                    <span class="tag">File system</span>
+                </div>
+                <p class="project-description">
+                    A FAT32 file system emulator implemented in Java, featuring both command-line
+                    and graphical interfaces. The shell component supports essential commands
+                    (ls, cd, cat, echo, etc) for file system navigation and manipulation. The graphical
+                    interface, built with JavaFX, provides a file explorer and includes utilities
+                    such as a disk fragmentation visualizer. The emulator implements core FAT32
+                    functionalities including file reading/writing, directory management, and disk
+                    formatting operations.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/tom-favereau/FAT32" class="btn btn-primary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <!--<a href="#" class="btn btn-secondary">Demo</a>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- JPEG -->
+        <div class="project-card">
+            <!--
+            <div class="project-image">
+                <div class="project-placeholder"></div>
+            </div>
+            -->
+            <div class="project-content">
+                <h3>JPEG Decoder</h3>
+                <div class="project-tags">
+                    <span class="tag">C++</span>
+                    <span class="tag">DCT</span>
+                    <span class="tag">Lossy compression</span>
+                </div>
+                <p class="project-description">
+                    A JPEG decoder implementation that converts compressed JPEG files into raw
+                    image data. The project handles the core JPEG decoding pipeline:
+                    Huffman decoding, dequantization, inverse Discrete Cosine Transform (IDCT),
+                    and color space conversion from YCbCr to RGB. The decoder processes baseline
+                    JPEG images, reading compressed data and outputting the decoded pixel
+                    information.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/tom-favereau/file_compression_cpp"
+                       class="btn btn-primary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <!--
+                    <a href="https://github.com/tom-favereau/file_compression_cpp" class="btn btn-secondary">Live Demo</a>
+                    -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Music player -->
+        <div class="project-card">
+            <div class="project-content">
+                <h3>Music player</h3>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">TKinter</span>
+                </div>
+                <p class="project-description">
+                    A music player application developed in Python that combines playback and
+                    YouTube download capabilities. The application utilizes PyTube library for
+                    downloading audio from YouTube videos, converting them into music files.
+                    Features include basic music player controls and a download function that
+                    allows users to save music directly from YouTube links.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/tom-favereau/music_player"
+                       class="btn btn-primary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Tom Favereau. Feel free to copy.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
