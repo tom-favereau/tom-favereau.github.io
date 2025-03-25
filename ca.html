@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twin prime conjecture and sensitivity</title>
+  <link rel="stylesheet" href="ca.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-brand">Tom Favereau</div>
+  <div class="nav-links">
+    <a href="index.html">About</a>
+    <a href="publications.html">Publications</a>
+    <a href="projects.html">Projects</a>
+    <a href="ca.html" class="active">Cool stuffs</a>
+  </div>
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+<h1>Twin prime conjecture and sensitivity</h1>
+
+<div id="controls">
+  <button id="reset">Reset (R)</button>
+  <button id="step">Step (S)</button>
+  <button id="start">Start (N)</button>
+  <button id="pause">Pause (P)</button>
+  <label class="switch">
+    <input type="checkbox" id="boundaryToggle">
+    <span class="slider round"></span>
+  </label>
+  <span id="boundaryType">Fixed</span>
+</div>
+
+<canvas id="canvas" width="800" height="120"></canvas>
+
+<script src="ca.js"></script>
+</body>
+</html>
