@@ -97,3 +97,30 @@ input:checked + .slider:before {
     margin-left: 1rem;
     color: var(--text-secondary);
 }
+
+.explanation {
+    margin: 2em;
+    padding: 1em;
+
+    border-radius: 5px;
+}
+
+.explanation h3 {
+
+    margin-bottom: 0.5em;
+}
+
+.explanation p {
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.article-link {
+    color: #ADD8E6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}
