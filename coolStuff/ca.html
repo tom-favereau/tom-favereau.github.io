@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twin prime conjecture and sensitivity</title>
+  <link rel="stylesheet" href="ca.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-brand">Tom Favereau</div>
+  <div class="nav-links">
+    <a href="..">About</a>
+    <a href="../publications">Publications</a>
+    <a href="../projects">Projects</a>
+    <a href="." >Cool stuff</a>
+  </div>
+  <div class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+<h1>Twin prime conjecture and sensitivity</h1>
+
+<div id="controls">
+  <button id="reset">Reset (R)</button>
+  <button id="step">Step (S)</button>
+  <button id="start">Start (N)</button>
+  <button id="pause">Pause (P)</button>
+  <label class="switch">
+    <input type="checkbox" id="boundaryToggle">
+    <span class="slider round"></span>
+  </label>
+  <span id="boundaryType">Fixed</span>
+</div>
+
+<canvas id="canvas" width="800" height="120"></canvas>
+
+<div class="explanation">
+  <h3>About this Cellular Automaton</h3>
+  <p>
+    This cellular automaton exhibits sensitivity to initial conditions if and only if the Twin Prime Conjecture is true.
+    This is a consequence of the fact that sensitivity to initial conditions in 1D cellular automata is a pi02-complete property.
+  </p>
+
+  <h4>How It Works</h4>
+  <p>
+    The core of this automaton is based on a Turing machine that, given an input n in unary (represented by a string of 0s),
+    halts when it finds the first pair of twin primes larger than n. This Turing machine will halt on all inputs if and only
+    if the Twin Prime Conjecture is true.
+  </p>
+
+
+  <p>
+    We have proven that the property of sensitivity to initial conditions
+    for cellular automata is pi02-complete in the arithmetical hierarchy.
+  </p>
+
+  <p>
+    Therefore, we can reduce the "halting on all inputs" (TOT well known to be pi02) problem of for Turing machine
+    to the sensitivity problem for cellular automata. This reduction allows us to construct a cellular automaton that is
+    sensitive to initial conditions if and only if the Twin Prime Conjecture is true.
+  </p>
+  <p>This work provides an application of the study of the arithmetic hierarchy.
+    I hope it helps people to understand what it is, and if you're an expert,
+    I hope you find it amusing.</p>
+
+  <p>
+    Interested readers should refer to <a href="javascript:void(0);" onclick="alert('Article not yet available. Please check back later :).');" class="article-link">this article</a> where we prove (with Ville Salo) the
+    complexity of sensitivity for cellular automata and its implications.
+  </p>
+
+  <h4>Turing Machine Diagram</h4>
+  <div class="mermaid">
+    %%{init: {'theme': 'base', 'themeVariables': { 'lineColor': '#66B2FF'}}}%%
+    stateDiagram-v2
+    [*] --> sUpa
+    sUpa --> odd : 0 / a,R
+    sUpa --> twin : x / R
+    odd --> eve : 0 / R
+    odd --> notPrime : x / 0,L
+    eve --> odd : 0 / R
+    eve --> odd : x / 0,R
+    sUp1 --> sUp2 : 0 / 2,R
+    sUp2 --> rstart : 0 / 2,L
+    sUp2 --> twin : x / L
+    each --> each : a,b,1 / R
+    each --> rstart : 0 / L
+    each --> notPrime : x / R
+    each --> sep : 2 / 0,R
+    sep --> sep : 2,1 / R
+    sep --> next : 0 / 1,L
+    sep --> repair : x / R
+    next --> each : 0 / 2,R
+    next --> next : 1,2 / L
+    rstart --> rstart : 1,2 / L
+    rstart --> each : a,b / R
+    repair --> repair : x / L
+    repair --> repair : 1 / 0,L
+    repair --> add2 : 0 / 2,R
+    repair --> add2 : 2 / R
+    add2 --> isPrime : x / R
+    add2 --> each : a,b / R
+    add2 --> add2 : 0 / 2,L
+    add2 --> add2 : 2 / L
+    isPrime --> isPrime : x,1,2 / 0,L
+    isPrime --> sUp1 : a / b,R
+    isPrime --> twin : b / R
+    isPrime --> isPrime : 0 / L
+    notPrime --> notPrime : x,1,2 / 0,L
+    notPrime --> sUp1 : a / R
+    notPrime --> sUp1 : b / a,R
+    notPrime --> notPrime : 0 / L
+    twin --> [*]
+  </div>
+
+  <p>
+    This diagram represents the Turing machine that searches for twin primes.
+    I'm sorry for it not being really readable but apparently Mermaid
+    is not good at drawing Turing machines.
+  </p>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>
+<script src="ca.js"></script>
+</body>
+</html>

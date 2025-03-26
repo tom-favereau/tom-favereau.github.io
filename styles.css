@@ -397,3 +397,36 @@ footer {
     to { width: 100% }
 }
 
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cool-stuff-list {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.cool-stuff-list li {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cool-stuff-list li::before {
+    content: "–";
+    position: absolute;
+    left: -20px;
+    color: var(--text-primary);
+}
+
+.cool-stuff-list a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.cool-stuff-list p {
+    margin-top: 5px;
+    color: var(--text-secondary);
+}
