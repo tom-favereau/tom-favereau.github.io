@@ -170,7 +170,7 @@ function tm(state, read) {
             '0': ['notPrime', '0', -1]
         },
         twin: {
-            // 'stay' est interprété comme ne pas bouger
+
             'a': ['twin', 'a', 0],
             'b': ['twin', 'b', 0],
             '0': ['twin', '0', 0],
@@ -347,7 +347,7 @@ document.getElementById('boundaryToggle').addEventListener('change', function() 
     }
 });
 
-// Modifiez le listener pour les touches du clavier
+
 document.addEventListener('keydown', (event) => {
     switch(event.key.toLowerCase()) {
         case 'r': automaton.reset(); break;
